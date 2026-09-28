@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setembro Amarelo | Falar é a melhor forma de cuidar</title>
+<meta name="description" content="Campanha de conscientização sobre a prevenção do suicídio: como surgiu, dados, mitos e verdades, e como buscar ajuda no CVV pelo 188.">
+<style>
+:root{--ink:#0c1730;--teal:#2a7f7a;--mist:#eef4f5;--sun:#f2b705;--sun-d:#8a6600;--line:#d5e0e3;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font:17px/1.65 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--white)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .5em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+
+/* topo */
+header{position:sticky;top:0;z-index:10;background:rgba(21,33,59,.96);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{font-family:Georgia,serif;font-weight:700;text-decoration:none;font-size:1.1rem;display:flex;align-items:center;gap:10px}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;font-size:.95rem;opacity:.85}
+nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--sun)}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:700}
+.btn-cvv{background:var(--sun);color:var(--ink)}
+.btn-cvv:hover{background:#ffd23f}
+.btn-line{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-line:hover{border-color:#fff}
+header .btn{padding:8px 16px}
+@media(max-width:820px){nav{display:none}}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;padding:96px 0 110px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(2.6rem,8vw,5.6rem);max-width:12ch;margin-bottom:.35em}
+.hero p{font-size:1.2rem;color:#c9d5e6}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.sun{position:absolute;right:-90px;top:50%;width:min(520px,70vw);transform:translateY(-50%);opacity:.95;pointer-events:none}
+.sun .ray{transform-origin:200px 200px;animation:spin 90s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:820px){.sun{opacity:.25;right:-160px}}
+
+/* faixa cvv */
+.strip{background:var(--sun);color:var(--ink);padding:26px 0}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.strip p{margin:0;font-weight:600;font-size:1.1rem}
+.strip .btn{background:var(--ink);color:#fff}
+.strip .btn:hover{background:#25355a}
+
+/* campanha em abas */
+.tabs{display:flex;gap:6px;border-bottom:2px solid var(--line);margin:26px 0 30px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:600;background:none;border:0;padding:12px 18px;cursor:pointer;color:#5b6a80;border-bottom:4px solid transparent;margin-bottom:-2px}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--sun)}
+.panel[hidden]{display:none}
+.panel{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+@media(max-width:820px){.panel{grid-template-columns:1fr}}
+.timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--sun)}
+.timeline li{margin-bottom:22px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-30px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--ink);border:3px solid var(--sun)}
+.timeline b{display:block;font-family:Georgia,serif;font-size:1.25rem}
+.quote{background:var(--mist);border-left:6px solid var(--teal);padding:22px 24px;border-radius:0 10px 10px 0;font-family:Georgia,serif;font-size:1.2rem}
+
+
+
+/* mitos */
+.mitos{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;margin-top:30px}
+.mito{background:#fff;border:2px solid var(--line);border-radius:12px;padding:0;text-align:left;font:inherit;cursor:pointer;color:inherit;overflow:hidden}
+.mito .q{padding:22px;font-family:Georgia,serif;font-size:1.2rem;display:block}
+.mito .a{display:none;padding:0 22px 22px;font-size:.98rem}
+.mito .tag{display:inline-block;font-family:"Segoe UI",sans-serif;font-size:.8rem;font-weight:700;padding:3px 10px;border-radius:20px;background:#fdecd0;color:#7a4a00;margin-bottom:8px}
+.mito[aria-expanded=true]{border-color:var(--teal)}
+.mito[aria-expanded=true] .a{display:block}
+.mito[aria-expanded=true] .tag.m{display:none}
+.mito .tag.v{display:none;background:#d6efec;color:#14524e}
+.mito[aria-expanded=true] .tag.v{display:inline-block}
+
+
+
+/* gestos + conversar */
+.gesto{background:var(--mist);border-radius:14px;padding:34px;margin-top:28px;display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.gesto blockquote{margin:0;font-family:Georgia,serif;font-size:1.4rem;flex:1 1 320px;min-height:4.2em}
+.gesto .btn{background:var(--ink);color:#fff}
+.passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin-top:34px;counter-reset:p}
+.passos div{border-top:4px solid var(--teal);padding-top:16px}
+.passos div::before{counter-increment:p;content:counter(p);font-family:Georgia,serif;font-size:2.4rem;color:var(--teal);display:block;line-height:1}
+.passos h3{font-size:1.25rem}
+
+/* ajuda */
+.ajuda{background:var(--teal);color:#fff}
+.ajuda .cols{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+@media(max-width:820px){.ajuda .cols{grid-template-columns:1fr}}
+.ajuda .num{font-family:Georgia,serif;font-size:clamp(4.5rem,14vw,9rem);font-weight:700;line-height:1;color:var(--sun)}
+.ajuda .card{background:rgba(0,0,0,.18);border-radius:12px;padding:22px 24px}
+.ajuda .card p{margin:0 0 .6em}
+.ajuda .btn-cvv{margin-top:8px}
+
+footer{background:var(--ink);color:#b7c4d9;padding:36px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{margin:0 0 .4em}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#topo">
+      <img src="img/artpoin-icone-lacinho-setembro-amarelo1.png" alt=" logotipo" style="width: 40px; height: 40px;">
+      <p style="color: #f7e75f;"> Setembro Amarelo</p>
+    </a>
+    <nav aria-label="Menu principal">
+      <a href="#campanha">A campanha</a>
+      <a href="#dados">Dados</a>
+      <a href="#mitos">Mitos e verdades</a>
+      
+      <a href="#conversar">Como ajudar</a>
+    </nav>
+    <a class="btn btn-cvv" href="https://www.cvv.org.br/" target="_blank" rel="noopener">Falar com o CVV</a>
+  </div>
+</header>
+
+<main id="topo">
+<div class="hero">
+  <svg class="sun" viewBox="0 0 400 400" aria-hidden="true">
+    <g class="ray" stroke="#f2b705" stroke-width="6" stroke-linecap="round">
+      <script>/* raios gerados abaixo */</script>
+    </g>
+    <circle cx="200" cy="200" r="92" fill="#f2b705"/>
+  </svg>
+  <div class="wrap" style="position:relative">
+    <h1>Escutar salva vidas.</h1>
+     <p>O Setembro Amarelo pode mudar a sua vida e a vida de outras pessoas, por isso é importante que você: escute e cuide.</p>
+    <div class="acts">
+      <a class="btn btn-cvv" href="tel:188">Ligue 188 (CVV, 24 h)</a>
+      <a class="btn btn-line" href="#campanha">Conheça a campanha</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="strip">
+  <div class="wrap">
+    <p>Precisando conversar agora? O CVV atende de graça, com sigilo, a qualquer hora.</p>
+    <a class="btn" href="https://www.cvv.org.br/" target="_blank" rel="noopener">Conversar com o CVV</a>
+  </div>
+</div>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setembro Amarelo | Falar é a melhor forma de cuidar</title>
+<meta name="description" content="Campanha de conscientização sobre a prevenção do suicídio: como surgiu, dados, mitos e verdades, e como buscar ajuda no CVV pelo 188.">
+<style>
+:root{--ink:#0c1730;--teal:#2a7f7a;--mist:#eef4f5;--sun:#f2b705;--sun-d:#8a6600;--line:#d5e0e3;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font:17px/1.65 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--white)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0 0 .5em}
+h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+
+/* topo */
+header{position:sticky;top:0;z-index:10;background:rgba(21,33,59,.96);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{font-family:Georgia,serif;font-weight:700;text-decoration:none;font-size:1.1rem;display:flex;align-items:center;gap:10px}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;font-size:.95rem;opacity:.85}
+nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--sun)}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:700}
+.btn-cvv{background:var(--sun);color:var(--ink)}
+.btn-cvv:hover{background:#ffd23f}
+.btn-line{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-line:hover{border-color:#fff}
+header .btn{padding:8px 16px}
+@media(max-width:820px){nav{display:none}}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;padding:96px 0 110px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(2.6rem,8vw,5.6rem);max-width:12ch;margin-bottom:.35em}
+.hero p{font-size:1.2rem;color:#c9d5e6}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.sun{position:absolute;right:-90px;top:50%;width:min(520px,70vw);transform:translateY(-50%);opacity:.95;pointer-events:none}
+.sun .ray{transform-origin:200px 200px;animation:spin 90s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:820px){.sun{opacity:.25;right:-160px}}
+
+/* faixa cvv */
+.strip{background:var(--sun);color:var(--ink);padding:26px 0}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.strip p{margin:0;font-weight:600;font-size:1.1rem}
+.strip .btn{background:var(--ink);color:#fff}
+.strip .btn:hover{background:#25355a}
+
+/* campanha em abas */
+.tabs{display:flex;gap:6px;border-bottom:2px solid var(--line);margin:26px 0 30px;flex-wrap:wrap}
+.tabs button{font:inherit;font-weight:600;background:none;border:0;padding:12px 18px;cursor:pointer;color:#5b6a80;border-bottom:4px solid transparent;margin-bottom:-2px}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--sun)}
+.panel[hidden]{display:none}
+.panel{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+@media(max-width:820px){.panel{grid-template-columns:1fr}}
+.timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:3px solid var(--sun)}
+.timeline li{margin-bottom:22px;position:relative}
+.timeline li::before{content:"";position:absolute;left:-30px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--ink);border:3px solid var(--sun)}
+.timeline b{display:block;font-family:Georgia,serif;font-size:1.25rem}
+.quote{background:var(--mist);border-left:6px solid var(--teal);padding:22px 24px;border-radius:0 10px 10px 0;font-family:Georgia,serif;font-size:1.2rem}
+
+
+
+/* mitos */
+.mitos{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;margin-top:30px}
+.mito{background:#fff;border:2px solid var(--line);border-radius:12px;padding:0;text-align:left;font:inherit;cursor:pointer;color:inherit;overflow:hidden}
+.mito .q{padding:22px;font-family:Georgia,serif;font-size:1.2rem;display:block}
+.mito .a{display:none;padding:0 22px 22px;font-size:.98rem}
+.mito .tag{display:inline-block;font-family:"Segoe UI",sans-serif;font-size:.8rem;font-weight:700;padding:3px 10px;border-radius:20px;background:#fdecd0;color:#7a4a00;margin-bottom:8px}
+.mito[aria-expanded=true]{border-color:var(--teal)}
+.mito[aria-expanded=true] .a{display:block}
+.mito[aria-expanded=true] .tag.m{display:none}
+.mito .tag.v{display:none;background:#d6efec;color:#14524e}
+.mito[aria-expanded=true] .tag.v{display:inline-block}
+
+
+
+/* gestos + conversar */
+.gesto{background:var(--mist);border-radius:14px;padding:34px;margin-top:28px;display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+.gesto blockquote{margin:0;font-family:Georgia,serif;font-size:1.4rem;flex:1 1 320px;min-height:4.2em}
+.gesto .btn{background:var(--ink);color:#fff}
+.passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px;margin-top:34px;counter-reset:p}
+.passos div{border-top:4px solid var(--teal);padding-top:16px}
+.passos div::before{counter-increment:p;content:counter(p);font-family:Georgia,serif;font-size:2.4rem;color:var(--teal);display:block;line-height:1}
+.passos h3{font-size:1.25rem}
+
+/* ajuda */
+.ajuda{background:var(--teal);color:#fff}
+.ajuda .cols{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+@media(max-width:820px){.ajuda .cols{grid-template-columns:1fr}}
+.ajuda .num{font-family:Georgia,serif;font-size:clamp(4.5rem,14vw,9rem);font-weight:700;line-height:1;color:var(--sun)}
+.ajuda .card{background:rgba(0,0,0,.18);border-radius:12px;padding:22px 24px}
+.ajuda .card p{margin:0 0 .6em}
+.ajuda .btn-cvv{margin-top:8px}
+
+footer{background:var(--ink);color:#b7c4d9;padding:36px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{margin:0 0 .4em}
+footer a{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#topo">
+      <img src="img/artpoin-icone-lacinho-setembro-amarelo1.png" alt=" logotipo" style="width: 40px; height: 40px;">
+      <p style="color: #f7e75f;"> Setembro Amarelo</p>
+    </a>
+    <nav aria-label="Menu principal">
+      <a href="#campanha">A campanha</a>
+      <a href="#dados">Dados</a>
+      <a href="#mitos">Mitos e verdades</a>
+      
+      <a href="#conversar">Como ajudar</a>
+    </nav>
+    <a class="btn btn-cvv" href="https://www.cvv.org.br/" target="_blank" rel="noopener">Falar com o CVV</a>
+  </div>
+</header>
+
+<main id="topo">
+<div class="hero">
+  <svg class="sun" viewBox="0 0 400 400" aria-hidden="true">
+    <g class="ray" stroke="#f2b705" stroke-width="6" stroke-linecap="round">
+      <script>/* raios gerados abaixo */</script>
+    </g>
+    <circle cx="200" cy="200" r="92" fill="#f2b705"/>
+  </svg>
+  <div class="wrap" style="position:relative">
+    <h1>Escutar salva vidas.</h1>
+     <p>O Setembro Amarelo pode mudar a sua vida e a vida de outras pessoas, por isso é importante que você: escute e cuide.</p>
+    <div class="acts">
+      <a class="btn btn-cvv" href="tel:188">Ligue 188 (CVV, 24 h)</a>
+      <a class="btn btn-line" href="#campanha">Conheça a campanha</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="strip">
+  <div class="wrap">
+    <p>Precisando conversar agora? O CVV atende de graça, com sigilo, a qualquer hora.</p>
+    <a class="btn" href="https://www.cvv.org.br/" target="_blank" rel="noopener">Conversar com o CVV</a>
+  </div>
+</div>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6.4 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandAmber: '#f59e0b',
+                        brandAmberHover: '#d97706',
+                        brandAmberLight: '#fef3c7',
+                        brandAmberDark: '#78350f',
+                        slateDark: '#0f172a',
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+
+        .font-serif-title {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+
+        /* Subtle pulse for critical helpline buttons */
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+        }
+        .pulse-amber {
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        /* Card transition effects */
+        .card-hover {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased selection:bg-amber-200 selection:text-amber-900">
+
+    <!-- HERO SECTION (Clean White Background & Modern Layout) -->
+    
+
+    <!-- EMERGENCY HELP BANNER (Highlighted Amber Cards on Slate-50) -->
+    <section class="bg-slate-50 py-10 border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-8">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-amber-700 bg-amber-100 px-3 py-1 rounded-full inline-block">
+                    Canais de Ajuda Imediata
+                </h2>
+                <p class="text-slate-800 font-serif-title font-bold text-xl sm:text-2xl mt-2">
+                    Não guarde a dor sozinho(a). Acesse suporte profissional agora:
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- CVV Phone -->
+                <a href="tel:188" class="bg-white p-5 rounded-2xl border border-amber-200 card-hover flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-amber-700 uppercase block">Ligação Gratuita</span>
+                        <h3 class="font-bold text-lg text-slate-900">CVV - 188</h3>
+                        <p class="text-xs text-slate-500">Atendimento 24h por dia</p>
+                    </div>
+                </a>
+
+                <!-- CVV Chat -->
+                <a href="https://www.cvv.org.br/chat/" target="_blank" rel="noopener noreferrer" class="bg-white p-5 rounded-2xl border border-slate-200 card-hover flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-slate-500 uppercase block">Via Internet</span>
+                        <h3 class="font-bold text-lg text-slate-900">Chat CVV Online</h3>
+                        <p class="text-xs text-slate-500">Conversa sigilosa por texto</p>
+                    </div>
+                </a>
+
+                <!-- SAMU 192 -->
+                <a href="tel:192" class="bg-white p-5 rounded-2xl border border-slate-200 card-hover flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-truck-medical"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-red-600 uppercase block">Emergência Médica</span>
+                        <h3 class="font-bold text-lg text-slate-900">SAMU - 192</h3>
+                        <p class="text-xs text-slate-500">Socorro imediato 24h</p>
+                    </div>
+                </a>
+
+                <!-- CAPS / SUS -->
+                <a href="#rede-apoio" class="bg-white p-5 rounded-2xl border border-slate-200 card-hover flex items-center gap-4 group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xl shrink-0 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase block">Rede Pública SUS</span>
+                        <h3 class="font-bold text-lg text-slate-900">CAPS / Postos</h3>
+                        <p class="text-xs text-slate-500">Atendimento psicológico público</p>
+                    </div>
+                </a>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: ENTENDA A CAMPANHA -->
+    <section id="campanha" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Text content -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-amber-700 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200">
+                        O Que É a Campanha
+                    </span>
+                    
+                    <h2 class="font-serif-title text-3xl sm:text-4xl text-slate-900 font-bold leading-tight">
+                        Conscientizar é o caminho para quebrar o tabu sobre a saúde mental
+                    </h2>
+
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
+                        Iniciado no Brasil em 2015 pelo Conselho Federal de Medicina (CFM) e pela Associação Brasileira de Psiquiatria (ABP), o <strong>Setembro Amarelo</strong> é a maior campanha mundial de conscientização sobre a prevenção do suicídio.
+                    </p>
+
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Historicamente, a cor amarela foi adotada em homenagem a Mike Emme, um jovem norte-americano conhecido por sua generosidade e por seu carro amarelo restaurado. Após sua partida precoce em 1994, seus amigos distribuíram fitas amarelas com cartões pedindo que qualquer pessoa em sofrimento buscasse ajuda.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                            <i class="fa-solid fa-ear-listen text-amber-600 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-slate-900 text-base mb-1">Escuta sem Julgamento</h4>
+                            <p class="text-slate-600 text-xs">Criar ambientes onde as pessoas se sintam seguras para falar sem medo de serem criticadas.</p>
+                        </div>
+
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                            <i class="fa-solid fa-hand-holding-heart text-amber-600 text-2xl mb-2"></i>
+                            <h4 class="font-bold text-slate-900 text-base mb-1">Cuidado Coletivo</h4>
+                            <p class="text-slate-600 text-xs">Pequenos gestos de empatia no dia a dia podem ser a tábua de salvação de alguém.</p>
+                        </div>
+                    </div>
+<br> 
+                    <iframe 
+  src="https://www.youtube.com/embed/BOMA-fJS5Hg" 
+  frameborder="0" 
+  width="800" 
+  height="450" 
+  style="display: block; margin: 0 auto; max-width: 100%;" 
+  allowfullscreen>
+</iframe>
+                </div>
+                
+
+                <!-- Right: Highlighting Stats -->
+                <div class="lg:col-span-5">
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/80 rounded-3xl p-8 space-y-6 shadow-sm">
+                        <h3 class="font-serif-title font-bold text-xl text-slate-900 border-b border-amber-200 pb-4">
+                            Por que falar sobre isso importa?
+                        </h3>
+
+                        <div class="space-y-6">
+                            
+                            <div class="flex items-start gap-4">
+                                <span class="font-serif-title font-black text-4xl text-amber-600 shrink-0">90%</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Dos casos podem ser prevenidos</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed mt-0.5">Segundo a Organização Mundial da Saúde (OMS), com o devido suporte psicológico e médico, a imensa maioria das crises fatais é evitável.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <span class="font-serif-title font-black text-4xl text-amber-600 shrink-0">1</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Gesto pode transformar tudo</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed mt-0.5">Perguntar de forma sincera "Como você realmente está?" abre espaço para a pessoa expor sua dor.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <span class="font-serif-title font-black text-4xl text-amber-600 shrink-0">24h</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Rede voluntária de apoio</h4>
+                                    <p class="text-slate-600 text-xs leading-relaxed mt-0.5">O CVV conta com milhares de voluntários preparados para ouvir com total confidencialidade.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: SINAIS DE ALERTA -->
+    <section id="sinais" class="py-20 bg-slate-50 border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-700 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3.5 py-1.5 rounded-full border border-amber-200">
+                    Atenção e Empatia
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl text-slate-900 font-bold mt-4 mb-3">
+                    Como reconhecer os Sinais de Alerta
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Nem sempre o sofrimento emocional é visível de forma óbvia. Observe mudanças no comportamento de parentes, amigos e colegas de trabalho.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Verbais -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-comment-slash"></i>
+                        </div>
+                        <h3 class="font-serif-title font-bold text-xl text-slate-900 mb-3">Sinais Verbais</h3>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                            Falas recorrentes que expressam desesperança, insatisfação profunda com a existência ou desejo de sumir:
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 font-medium">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+                                <span>"Eu preferia não ter acordado hoje."</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+                                <span>"Sou um peso para a vida de todos."</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+                                <span>"Vocês vão ficar mais tranquilos sem mim."</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2: Comportamentais -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-user-slash"></i>
+                        </div>
+                        <h3 class="font-serif-title font-bold text-xl text-slate-900 mb-3">Sinais Comportamentais</h3>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                            Mudanças bruscas de hábitos e atitudes que se afastam do padrão rotineiro da pessoa:
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 font-medium">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+                                <span>Isolamento social e desinteresse por hobbys.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+                                <span>Doação sem motivo de pertences afetivos ou animais.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+                                <span>Despedidas incomuns ou organização apressada de pendências.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3: Emocionais -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm card-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-face-frown font-bold"></i>
+                        </div>
+                        <h3 class="font-serif-title font-bold text-xl text-slate-900 mb-3">Sinais Emocionais</h3>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                            Oscilações extremas no estado de humor e na forma de reagir aos acontecimentos diários:
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-700 font-medium">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+                                <span>Sensação persistente de ansiedade ou apatia profunda.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+                                <span>Calma repentina após longo período de extrema angústia.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500 mt-0.5"></i>
+                                <span>Insônia grave ou sonolência excessiva constante.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: COMO AJUDAR (O que fazer x O que NÃO fazer) -->
+    <section id="como-ajudar" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-700 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200">
+                    Guia Prático de Apoio
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl text-slate-900 font-bold mt-4 mb-3">
+                    O que fazer e o que evitar ao ajudar alguém
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Saber como reagir ao ouvir um desabafo pode fazer a diferença entre o isolamento e a busca por tratamento.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                
+                <!-- DO's (O que fazer) -->
+                <div class="bg-emerald-50/50 border border-emerald-200/80 rounded-3xl p-8 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <h3 class="font-serif-title font-bold text-2xl text-slate-900">Atitudes Recomendadas (FAÇA)</h3>
+                    </div>
+
+                    <ul class="space-y-4 text-sm text-slate-700">
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-emerald-100 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-lg mt-0.5 shrink-0"></i>
+                            <span><strong>Escute atenta e pacientemente:</strong> Reserve um ambiente calmo, sem distrações com celular ou interrupções.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-emerald-100 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-lg mt-0.5 shrink-0"></i>
+                            <span><strong>Valide a dor da pessoa:</strong> Use frases acolhedoras como <em>"Lamento que esteja passando por isso, você é importante para mim e estou aqui."</em></span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-emerald-100 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-lg mt-0.5 shrink-0"></i>
+                            <span><strong>Incentive a ajuda profissional:</strong> Ofereça-se para acompanhar a pessoa até um psicólogo, psiquiatra, posto de saúde ou CAPS.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-emerald-100 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-lg mt-0.5 shrink-0"></i>
+                            <span><strong>Aumente a segurança:</strong> Em momentos de crise grave, não deixe a pessoa sozinha e avise familiares ou serviços de saúde.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- DONT's (O que NÃO fazer) -->
+                <div class="bg-rose-50/50 border border-rose-200/80 rounded-3xl p-8 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <h3 class="font-serif-title font-bold text-2xl text-slate-900">O que EVITAR (NÃO FAÇA)</h3>
+                    </div>
+
+                    <ul class="space-y-4 text-sm text-slate-700">
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-rose-100 shadow-sm">
+                            <i class="fa-solid fa-circle-xmark text-rose-600 text-lg mt-0.5 shrink-0"></i>
+                            <span><strong>Não julgue nem invalide:</strong> Evite frases como <em>"Isso é drama"</em>, <em>"Falta de fé"</em> ou <em>"Tem pessoas em situação pior"</em>.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-rose-100 shadow-sm">
+                            <i class="fa-solid fa-circle-xmark text-rose-600 text-lg mt-0.5 shrink-0"></i>
+                            <span><strong>Não dê conselhos simplistas:</strong> Evite pressionar com <em>"Reaja!"</em>, <em>"Oua uma música animada"</em> ou <em>"Basta querer sair dessa"</em>.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-rose-100 shadow-sm">
+                            <i class="fa-solid fa-circle-xmark text-rose-600 text-lg mt-0.5 shrink-0"></i>
+                            <span><strong>Não mostre choque ou pânico:</strong> Tente manter a calma ao ouvir desabafos difíceis para transmitir segurança à pessoa.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-rose-100 shadow-sm">
+                            <i class="fa-solid fa-circle-xmark text-rose-600 text-lg mt-0.5 shrink-0"></i>
+                            <span><strong>Não prometa segredo em risco iminente:</strong> Se houver perigo imediato à vida, notifique profissionais ou responsáveis.</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: MITOS E VERDADES -->
+    <section id="mitos" class="py-20 bg-slate-50 border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-amber-700 font-bold text-xs uppercase tracking-widest bg-amber-100 px-3.5 py-1.5 rounded-full border border-amber-200">
+                    Desmistificando Tabus
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl text-slate-900 font-bold mt-4 mb-3">
+                    Mitos e Verdades sobre a Saúde Mental
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Clique nos cartões abaixo para entender o que a ciência e a psicologia dizem sobre mitos populares.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                
+                <!-- Myth 1 -->
+                <div class="myth-card bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer transition-all hover:border-amber-400 shadow-sm" onclick="toggleMyth(this)">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="space-y-2">
+                            <span class="bg-rose-100 text-rose-700 font-bold text-xs px-2.5 py-1 rounded-md uppercase border border-rose-200">Mito Frequente</span>
+                            <h3 class="font-bold text-slate-900 text-base sm:text-lg">"Falar sobre suicídio pode incentivar a pessoa a cometer o ato."</h3>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-amber-600 shrink-0 myth-icon">
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="myth-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-sm leading-relaxed">
+                        <span class="text-emerald-700 font-bold block mb-1">VERDADE CIENTÍFICA:</span>
+                        Falar abertamente de forma acolhedora reduz a ansiedade e o isolamento de quem está em sofrimento. O diálogo seguro abre portas para a pessoa buscar tratamento adequado.
+                    </div>
+                </div>
+
+                <!-- Myth 2 -->
+                <div class="myth-card bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer transition-all hover:border-amber-400 shadow-sm" onclick="toggleMyth(this)">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="space-y-2">
+                            <span class="bg-rose-100 text-rose-700 font-bold text-xs px-2.5 py-1 rounded-md uppercase border border-rose-200">Mito Frequente</span>
+                            <h3 class="font-bold text-slate-900 text-base sm:text-lg">"Quem fala que vai fazer, só quer chamar a atenção."</h3>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-amber-600 shrink-0 myth-icon">
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="myth-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-sm leading-relaxed">
+                        <span class="text-emerald-700 font-bold block mb-1">VERDADE CIENTÍFICA:</span>
+                        A maioria das pessoas que tentam tirar a própria vida dá sinais prévios. Todo pedido de ajuda ou fala de dor deve ser levado a sério e respondido com acolhimento.
+                    </div>
+                </div>
+
+                <!-- Myth 3 -->
+                <div class="myth-card bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer transition-all hover:border-amber-400 shadow-sm" onclick="toggleMyth(this)">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="space-y-2">
+                            <span class="bg-rose-100 text-rose-700 font-bold text-xs px-2.5 py-1 rounded-md uppercase border border-rose-200">Mito Frequente</span>
+                            <h3 class="font-bold text-slate-900 text-base sm:text-lg">"Depressão é frescura ou falta de Deus e de força de vontade."</h3>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-amber-600 shrink-0 myth-icon">
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="myth-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-sm leading-relaxed">
+                        <span class="text-emerald-700 font-bold block mb-1">VERDADE CIENTÍFICA:</span>
+                        A depressão é um transtorno psiquiátrico reconhecido biologicamente que afeta neurotransmissores no cérebro. Não tem relação com fraqueza moral e exige terapia e medicação apropriadas.
+                    </div>
+                </div>
+
+                <!-- Myth 4 -->
+                <div class="myth-card bg-white border border-slate-200 rounded-2xl p-6 cursor-pointer transition-all hover:border-amber-400 shadow-sm" onclick="toggleMyth(this)">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="space-y-2">
+                            <span class="bg-rose-100 text-rose-700 font-bold text-xs px-2.5 py-1 rounded-md uppercase border border-rose-200">Mito Frequente</span>
+                            <h3 class="font-bold text-slate-900 text-base sm:text-lg">"Se a pessoa parece sorridente nas redes sociais, ela está bem."</h3>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-amber-600 shrink-0 myth-icon">
+                            <i class="fa-solid fa-plus transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="myth-content hidden mt-4 pt-4 border-t border-slate-100 text-slate-600 text-sm leading-relaxed">
+                        <span class="text-emerald-700 font-bold block mb-1">VERDADE CIENTÍFICA:</span>
+                        Existe a chamada "depressão sorridente", onde o indivíduo mascara sua dor atrás de uma rotina aparentemente produtiva e feliz para esconder a vulnerabilidade.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: MURAL DA ESPERANÇA (Interactive Form + LocalStorage Grid) -->
+    <section id="mural" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-amber-700 font-bold text-xs uppercase tracking-widest bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200">
+                    Comunidade de Acolhimento
+                </span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl text-slate-900 font-bold mt-4 mb-3">
+                    Mural da Esperança
+                </h2>
+                <p class="text-slate-600 text-base">
+                    Envie uma palavra de afeto, carinho ou superação para aquecer o coração de quem precisa ler uma mensagem positiva hoje.
+                </p>
+            </div>
+
+            <!-- Form Box to Add New Message -->
+            <div class="max-w-3xl mx-auto bg-slate-50 border border-amber-200/80 rounded-3xl p-6 sm:p-8 shadow-sm mb-16">
+                
+                <h3 class="font-serif-title font-bold text-xl text-slate-900 mb-4 flex items-center gap-2">
+                    <i class="fa-solid fa-pen-to-square text-amber-600"></i>
+                    <span>Escreva sua Mensagem de Apoio</span>
+                </h3>
+
+                <form id="mural-form" class="space-y-4">
+                    
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="author" class="block text-xs font-bold text-slate-700 uppercase mb-1">Seu Nome / Apelido (Opcional)</label>
+                            <input type="text" id="author" placeholder="Ex: Maria S. ou Anônimo" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+
+                        <div>
+                            <label for="category" class="block text-xs font-bold text-slate-700 uppercase mb-1">Categoria da Mensagem</label>
+                            <select id="category" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <option value="Esperança">Mensagem de Esperança</option>
+                                <option value="Acolhimento">Acolhimento e Empatia</option>
+                                <option value="Superação">História de Superação</option>
+                                <option value="Gratidão">Gratidão pela Vida</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-xs font-bold text-slate-700 uppercase mb-1">Sua Mensagem Inspiradora *</label>
+                        <textarea id="message" rows="3" required placeholder="Escreva palavras acolhedoras que possam trazer luz para quem está passando por momentos difíceis..." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                    </div>
+
+                    <div class="flex items-center justify-between pt-2">
+                        <span class="text-xs text-slate-500 flex items-center gap-1">
+                            <i class="fa-solid fa-shield text-amber-600"></i> Mensagem publicada instantaneamente
+                        </span>
+                        
+                        <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm px-6 py-3 rounded-xl transition-all shadow-md flex items-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Publicar Mensagem</span>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+    </section>
+
+
+    <div style="text-align: center; margin: 40px auto 20px auto; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <h2 style="font-size: 36px; font-weight: 700; color: #1F2937; margin: 0; border-bottom: 3px solid #F59E0B; display: inline-block; padding-bottom: 8px;">
+    Curta-Metragens
+  </h2>
+</div>
+
+    <div style="display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px 0;">
+  <iframe 
+    src="https://www.youtube.com/embed/21mDekTZwsw" 
+    frameborder="0" 
+    style="flex: 1; min-width: 280px; max-width: 380px; aspect-ratio: 16 / 9; border-radius: 8px;" 
+    allowfullscreen>
+  </iframe>
+
+  <iframe 
+    src="https://www.youtube.com/embed/jCY6Eex0AWk" 
+    frameborder="0" 
+    style="flex: 1; min-width: 280px; max-width: 380px; aspect-ratio: 16 / 9; border-radius: 8px;" 
+    allowfullscreen>
+  </iframe>
+
+  <iframe 
+    src="https://www.youtube.com/embed/M43eysTh6Do" 
+    frameborder="0" 
+    style="flex: 1; min-width: 280px; max-width: 380px; aspect-ratio: 16 / 9; border-radius: 8px;" 
+    allowfullscreen>
+  </iframe>
+
+</div>
+
+
+    <!-- FOOTER (Clean Light Footer with Warm Highlights) -->
+    <footer class="bg-white border-t border-slate-200 text-slate-600 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-100">
+                
+                <!-- Logo Footer -->
+                <div class="flex items-center gap-3">
+                  
+                    <div>
+                        <span class="font-serif-title font-bold text-xl text-slate-900 block leading-tight">Setembro Amarelo</span>
+                        <span class="text-xs text-slate-500">Conscientização sobre a vida e a saúde mental</span>
+                    </div>
+                </div>
+
+                <!-- Footer Quick Nav -->
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-medium">
+                    <a href="#campanha" class="hover:text-amber-600 transition-colors">A Campanha</a>
+                    <a href="#sinais" class="hover:text-amber-600 transition-colors">Sinais de Alerta</a>
+                    <a href="#como-ajudar" class="hover:text-amber-600 transition-colors">Como Ajudar</a>
+                    <a href="#mitos" class="hover:text-amber-600 transition-colors">Mitos e Verdades</a>
+                    <a href="#mural" class="hover:text-amber-600 transition-colors">Mural</a>
+                </div>
+
+                <!-- Emergency Contact Pill -->
+                <a href="tel:188" class="bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 font-bold text-xs px-5 py-2.5 rounded-full inline-flex items-center gap-2 transition-colors">
+                    <i class="fa-solid fa-phone text-amber-700"></i>
+                    <span>Em crise? Ligue 188 (CVV)</span>
+                </a>
+
+            </div>
+
+        
+
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+(function(){var g=document.querySelector(".ray"),s="";for(var i=0;i<24;i++){var a=i*15*Math.PI/180,r1=120,r2=i%2?165:185;s+='<line x1="'+(200+r1*Math.cos(a))+'" y1="'+(200+r1*Math.sin(a))+'" x2="'+(200+r2*Math.cos(a))+'" y2="'+(200+r2*Math.sin(a))+'"/>'}g.innerHTML=s})();
+
+// abas
+var tabs=document.querySelectorAll('[role=tab]');
+tabs.forEach(function(t){t.addEventListener("click",function(){
+  tabs.forEach(function(x){x.setAttribute("aria-selected",x===t);document.getElementById(x.getAttribute("aria-controls")).hidden=x!==t});
+})});
+
+// pontos 17 em 100
+var dots=document.getElementById("dots"),h="";
+for(var i=0;i<100;i++)h+="<i></i>";dots.innerHTML=h;
+var di=dots.children;
+
+// contadores ao entrar na tela
+function count(el){var end=parseFloat(el.dataset.n),d=+el.dataset.d||0,t0=null;
+  function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1400,1);el.textContent=(end*p).toFixed(d).replace(".",",");if(p<1)requestAnimationFrame(f)}
+  requestAnimationFrame(f)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+  document.querySelectorAll("[data-n]").forEach(count);
+  var k=0,iv=setInterval(function(){if(k>=17){clearInterval(iv);return}di[k++].classList.add("on")},70);
+  io.disconnect()}})},{threshold:.35});
+io.observe(document.querySelector(".dados-grid"));
+
+// mitos
+document.querySelectorAll(".mito").forEach(function(m){m.addEventListener("click",function(){
+  m.setAttribute("aria-expanded",m.getAttribute("aria-expanded")!=="true")})});
+
+
+
+</script>
+</body>
+</html>
+<script>
+(function(){var g=document.querySelector(".ray"),s="";for(var i=0;i<24;i++){var a=i*15*Math.PI/180,r1=120,r2=i%2?165:185;s+='<line x1="'+(200+r1*Math.cos(a))+'" y1="'+(200+r1*Math.sin(a))+'" x2="'+(200+r2*Math.cos(a))+'" y2="'+(200+r2*Math.sin(a))+'"/>'}g.innerHTML=s})();
+
+// abas
+var tabs=document.querySelectorAll('[role=tab]');
+tabs.forEach(function(t){t.addEventListener("click",function(){
+  tabs.forEach(function(x){x.setAttribute("aria-selected",x===t);document.getElementById(x.getAttribute("aria-controls")).hidden=x!==t});
+})});
+
+// pontos 17 em 100
+var dots=document.getElementById("dots"),h="";
+for(var i=0;i<100;i++)h+="<i></i>";dots.innerHTML=h;
+var di=dots.children;
+
+// contadores ao entrar na tela
+function count(el){var end=parseFloat(el.dataset.n),d=+el.dataset.d||0,t0=null;
+  function f(t){if(!t0)t0=t;var p=Math.min((t-t0)/1400,1);el.textContent=(end*p).toFixed(d).replace(".",",");if(p<1)requestAnimationFrame(f)}
+  requestAnimationFrame(f)}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+  document.querySelectorAll("[data-n]").forEach(count);
+  var k=0,iv=setInterval(function(){if(k>=17){clearInterval(iv);return}di[k++].classList.add("on")},70);
+  io.disconnect()}})},{threshold:.35});
+io.observe(document.querySelector(".dados-grid"));
+
+// mitos
+document.querySelectorAll(".mito").forEach(function(m){m.addEventListener("click",function(){
+  m.setAttribute("aria-expanded",m.getAttribute("aria-expanded")!=="true")})});
+
+
+
+</script>
+</body>
+</html>
